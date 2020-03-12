@@ -38,6 +38,9 @@ yarn build
 
 ## 打包jiacrontab
 ```sh
+cd jiacrontab-frontend
+npm run build
+//把生成的文件放到 jiacronjob_admin/assets下，再执行如下命令
 go get -u github.com/kataras/bindata/cmd/bindata
 cd jiacrontab/jiacrontab_admin
 // 生成bindata_gzip.go
