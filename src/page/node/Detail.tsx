@@ -3,7 +3,6 @@ import { Tabs } from 'antd'
 import BaseLayout from '../../layout/BaseLayout'
 import Bread from '../../components/Layout/Bread'
 import SystemInfo from '../../components/SystemInfo/SystemInfo'
-import CrontabJobList from '../../components/Job/CrontabJobList'
 import DaemonJobList from '../../components/Job/DaemonJobList'
 import API from '../../config/api'
 import { getUrlParam, getRequest } from '../../utils/utils'
@@ -39,7 +38,7 @@ class NodeDetail extends React.Component<Props> {
     constructor(props: Props) {
         super(props)
         this.state = {
-            selectKey: '1',
+            selectKey: '2',
 
             crontabList: [],
             daemonJobList: [],
@@ -264,20 +263,20 @@ class NodeDetail extends React.Component<Props> {
                             padding: '0 16px'
                         }}
                     >
-                        <TabPane tab="定时任务" key="1">
-                            <CrontabJobList
-                                changeLoading={this.changeLoading}
-                                reload={this.reload}
-                                jobData={this.state.crontabList}
-                                loading={this.state.loading}
-                                currentKey="1"
-                                page={this.data.page}
-                                pageSize={this.data.pageSize}
-                                total={this.data.total}
-                                history={this.props.history}
-                                addr={addr}
-                            />
-                        </TabPane>
+                        {/*<TabPane tab="定时任务" key="1">*/}
+                        {/*    <CrontabJobList*/}
+                        {/*        changeLoading={this.changeLoading}*/}
+                        {/*        reload={this.reload}*/}
+                        {/*        jobData={this.state.crontabList}*/}
+                        {/*        loading={this.state.loading}*/}
+                        {/*        currentKey="1"*/}
+                        {/*        page={this.data.page}*/}
+                        {/*        pageSize={this.data.pageSize}*/}
+                        {/*        total={this.data.total}*/}
+                        {/*        history={this.props.history}*/}
+                        {/*        addr={addr}*/}
+                        {/*    />*/}
+                        {/*</TabPane>*/}
                         <TabPane tab="常驻任务" key="2">
                             <DaemonJobList
                                 changeLoading={this.changeLoading}

@@ -114,6 +114,10 @@ class EditDaemon extends React.Component<AddProps> {
             newPrams.APITo = trimEmpty(values.APITo.split(','))
         }
 
+        if (values.APIData !== undefined) {
+            newPrams.APIData = values.APIData
+        }
+
         if (values.workIp !== undefined) {
             newPrams.workIp = trimEmpty(values.workIp.split(','))
         }
@@ -401,6 +405,21 @@ class EditDaemon extends React.Component<AddProps> {
                                         : ''
                                 })(<Input placeholder="请输入api地址" />)}
                             </Form.Item>
+
+                            {/*前端测试*/}
+                            <Form.Item
+                                {...formItemLayout} label="API post data:">
+                                {getFieldDecorator('APIData', {
+                                    initialValue: defaultFormValus.APIData
+                                })(
+                                    <Input.TextArea
+                                        autosize={{ minRows: 4, maxRows: 20 }}
+                                        placeholder="请输入post body部分"
+                                    />
+                                )}
+                            </Form.Item>
+
+
 
                             <Form.Item {...formItemLayoutWithOutLabel}>
                                 {getFieldDecorator('taskError', {
